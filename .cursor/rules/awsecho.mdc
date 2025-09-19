@@ -1,0 +1,5 @@
+---
+description: Target 7.5.0
+globs: Target powershell 7.5.0
+alwaysApply: true
+---

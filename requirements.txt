@@ -1,0 +1,46 @@
+# AWS PowerShell Module Requirements for Offline Windows EC2 Instances
+# These modules must be pre-installed on the EC2 instances before going offline
+# PowerShell Version: 7.5.0
+
+# Core AWS PowerShell Module (includes all services)
+# Install with: Install-Module -Name AWSPowerShell -Force -AllowClobber
+AWSPowerShell
+
+# Individual service modules (recommended for better performance and smaller footprint)
+# Install with: Install-Module -Name AWS.Tools.EC2 -Force -AllowClobber
+AWS.Tools.Common
+AWS.Tools.EC2
+AWS.Tools.S3
+AWS.Tools.IAM
+AWS.Tools.RDS
+AWS.Tools.Lambda
+AWS.Tools.CloudFormation
+AWS.Tools.CloudWatch
+AWS.Tools.SQS
+AWS.Tools.SNS
+
+# Additional useful modules for EC2 management and VPC endpoints
+AWS.Tools.SecurityToken
+AWS.Tools.Organizations
+AWS.Tools.ConfigService
+AWS.Tools.CloudTrail
+AWS.Tools.SSM
+AWS.Tools.EC2InstanceConnect
+
+# VPC Endpoints specific modules
+AWS.Tools.EC2  # Already listed above, but explicitly for VPC endpoints
+
+# Development and Testing (for script development only)
+Pester
+
+# PowerShell 7.5.0 specific requirements
+# Ensure PowerShell 7.5.0 is installed before running scripts
+# Download from: https://github.com/PowerShell/PowerShell/releases/tag/v7.5.0
+
+# Note: All modules must be installed with -Force -AllowClobber flags
+# and cached locally before the EC2 instance goes offline
+# 
+# Installation commands for offline setup:
+# Install-Module -Name AWS.Tools.Common -Force -AllowClobber -Scope AllUsers
+# Install-Module -Name AWS.Tools.EC2 -Force -AllowClobber -Scope AllUsers
+# Install-Module -Name Pester -Force -AllowClobber -Scope AllUsers
